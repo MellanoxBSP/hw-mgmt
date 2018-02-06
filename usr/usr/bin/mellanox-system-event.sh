@@ -99,7 +99,7 @@ if [ "$1" == "add" ]; then
     fi
     for i in {1..12}; do
         if [ -f $3$4/fan"$i"_input ]; then
-          if [ $(inv) -eq 0 ]; then
+          if [ -z "$inv" ] || [ ${inv} -eq 0 ]; then
             j=$i
           else
             j=`echo $(($inv - $i))`
